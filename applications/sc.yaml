@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/snraju98/argocd.git
     targetRevision: main
-    path: stoarge-classes
+    path: storage-classes
 
   # Destination configuration pointing to the target cluster and namespace
   destination:
