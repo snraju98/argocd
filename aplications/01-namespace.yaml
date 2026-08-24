@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: namespaces
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  # The argo CD project this application belongs to
+  project: default
+
+  source:
+    repoURL: https://github.com/snraju98/argocd.git
+    targetRevision: main
+    path: namespaces
+
+  # Destination configuration pointing to the target cluster and namespace
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
